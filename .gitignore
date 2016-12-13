@@ -1,6 +1,8 @@
 # https://github.com/github/gitignore/blob/master/Node.gitignore
 # https://github.com/github/gitignore/blob/master/Java.gitignore
 
+.DS_Store
+
 # Logs
 logs
 *.log
