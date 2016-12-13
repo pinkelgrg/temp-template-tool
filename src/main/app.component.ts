@@ -4,5 +4,13 @@ import { Component } from "@angular/core";
   selector: "my-app",
   templateUrl: "./app.component.html",
 })
-export class AppComponent { }
+export class AppComponent {
+  currentView  = "home";
 
+  propertyMenuClicked () {
+    this.currentView = "property";
+  }
+  homeMenuClicked () {
+    this.currentView = "home";
+  }
+}

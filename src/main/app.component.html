@@ -1,10 +1,9 @@
 <nav class="navbar navbar-dark bg-inverse">
   <ul class="nav navbar-nav">
-    <!--<li click)="homeMenuClicked()" [ngClass]="{"active": "home"=== currentView}">-->
-      <li class="nav-item" (click)="homeMenuClicked()" [ngClass]="{'active': 'home'=== currentView}"> 
+      <li class="nav-item" (click)="homeMenuClicked()" [ngClass]="{active: home === currentView}"> 
       <a class="nav-link" routerLink="/">Home </a>
     </li>
-    <li class="nav-item" (click)="propertyMenuClicked()" [ngClass]="{'active': 'property'=== currentView}">
+    <li class="nav-item" (click)="propertyMenuClicked()" [ngClass]="{active: property=== currentView}">
       <li>
       <a class="nav-link" routerLink="/property">New Template</a>
     </li>
