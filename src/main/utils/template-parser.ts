@@ -123,8 +123,8 @@ export class TemplateParser {
             html = this.replaceAll(html, '${clickUrl' + n.toString() + '}', 'http://www.admarketplace.com/?test=' + n.toString());
             html = this.replaceAll(html, '${displayUrl' + n.toString() + '}', 'www' + n.toString() + '.admarketplace.com/hello-world');
             html = this.replaceAll(html, '${description' + n.toString() + '}', ads[n - 1].description);
-            html = this.replaceAll(html, '${thumbUrl' + n.toString() + '}', '/assets/images/' + this.keywords[n - 1] + '.jpg');
-            html = this.replaceAll(html, '${pubPixel' + n.toString() + '}', '/assets/images/tracking.gif?ad=' + n.toString() +
+            html = this.replaceAll(html, '${thumbUrl' + n.toString() + '}', 'src/main/assets/images/' + this.keywords[n - 1] + '.jpg');
+            html = this.replaceAll(html, '${pubPixel' + n.toString() + '}', 'src/main/assets/images/tracking.gif?ad=' + n.toString() +
             '&_' + (new Date()).getTime().toString());
         }
         return html;
@@ -137,7 +137,7 @@ export class TemplateParser {
         
         for(let i =0; i<adCount; i++){
             let temp={
-                "impressionUrl" : '/assets/images/tracking.gif?ad=' + i.toString() + '&_' + (new Date()).getTime().toString(),
+                "impressionUrl" : 'src/main/assets/images/tracking.gif?ad=' + i.toString() + '&_' + (new Date()).getTime().toString(),
                 "clickUrl" : 'http://www.admarketplace.com/?test=' + i.toString(),
                 "title" : ads[adCount - i].title,                
                 "displayUrl" : 'www' + i.toString() + '.admarketplace.com/hello-world',
