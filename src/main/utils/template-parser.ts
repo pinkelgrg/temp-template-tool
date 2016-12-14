@@ -146,6 +146,10 @@ export class TemplateParser {
             data.push(temp);
             
         };
+        
+        document.querySelector("#adtag-template").innerHTML=html;
+        let source: String = document.querySelector("#adtag-template").innerHTML;
+        
         debugger;
         var a = 10;
         // let startPos = html.indexOf("{{#each .}}");
