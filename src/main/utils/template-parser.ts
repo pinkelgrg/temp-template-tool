@@ -1,7 +1,7 @@
 import { GridData } from '../grid/grid-data';
-
+declare const Handlebars:any;
 export class TemplateParser {
-
+    
     errorMessages: string[];
     warningMessages: string[];
     templateData: GridData;
@@ -147,20 +147,10 @@ export class TemplateParser {
             
         };
         
-        document.querySelector("#adtag-template").innerHTML=html;
-        let source: String = document.querySelector("#adtag-template").innerHTML;
-        
-        debugger;
-        var a = 10;
-        // let startPos = html.indexOf("{{#each .}}");
-        // let endPos = html.indexOf("{{/each}}") + 9; 
-
-        // let handlebarTemplate = html.substring(startPos,endPos);
-        // let compileTemplate = Handlebars.compile(handlebarTemplate)
-         
-        // let parser = new DOMParser();
-        // html = parser.parseFromString(html, "text/html");
-        
+        let source: String = html;
+        let template = Handlebars.compile(source);
+        let result = template(data);
+        return result;
     }
     getTemplateEngine () {
         try {
