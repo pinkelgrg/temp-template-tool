@@ -42,7 +42,7 @@ import {
     DialogModule,
     ContextMenuModule,
     PanelModule,
-    DropdownModule
+    DropdownModule,
   ],
   providers: [
     appRoutingProviders,

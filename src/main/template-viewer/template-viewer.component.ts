@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { GridData } from '../grid/grid-data';
+import { GridDataInterface } from '../grid/grid-data';
 import {TemplateParser} from '../utils/template-parser';
 @Component({
   selector: 'app-template-viewer',
@@ -7,7 +7,7 @@ import {TemplateParser} from '../utils/template-parser';
   styleUrls: ['./template-viewer.component.css']
 })
 export class TemplateViewerComponent implements OnInit {
-  @Input() selectedTemplate: GridData;
+  @Input() selectedTemplate: GridDataInterface;
   selectedTemplateHTML = '';
   templateParser = new TemplateParser();
 
@@ -26,7 +26,7 @@ export class TemplateViewerComponent implements OnInit {
   ngOnInit() {
 
   }
-  updateIframeWithSelectedTemplate(templ: GridData) {
+  updateIframeWithSelectedTemplate(templ: GridDataInterface) {
 
     let content = this.templateParser.beginTemplateValidation(templ);
 

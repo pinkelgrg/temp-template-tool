@@ -1,10 +1,10 @@
-import { GridData } from '../grid/grid-data';
+import { GridDataInterface } from '../grid/grid-data';
 declare const Handlebars:any;
 export class TemplateParser {
     
     errorMessages: string[];
     warningMessages: string[];
-    templateData: GridData;
+    templateData: GridDataInterface;
     templateEngineId = 0;
     normalAds = [{
         "title": "Sprint® Family Share Pack",
@@ -81,7 +81,7 @@ export class TemplateParser {
 
     keywords = ['online_degree', 'jcpenney', 'delta', 'car_insurance'];
 
-    beginTemplateValidation (template: GridData) {
+    beginTemplateValidation (template: GridDataInterface) {
         this.errorMessages = [];
         this.warningMessages = [];
 
