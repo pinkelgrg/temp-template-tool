@@ -1,4 +1,4 @@
-export interface GridData {
+export interface GridDataInterface {
     TEMPLATE_ID;
     TEMPLATE_HTML_ID;
     NAME;

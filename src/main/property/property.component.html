@@ -1,22 +1,46 @@
-<div class="TemplatepropertyContainer">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="pubName">
-                <span> Pub Name</span>
-                <p-dropdown [options]="cities" [(ngModel)]="selectedPublisher" [style]="{'width':'200px'}"></p-dropdown>
+<div class="container">
+    <div  [hidden]="submitted">    
+        <form (ngSubmit)="onSubmit()" #propertyForm="ngForm">
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <label for="name">Publisher Name</label>
+                        <input type="text" class="form-control" placeholder="Publisher Name"  [(ngModel)]="model.publisherName" #publisherName="ngModel" name="model" (keyup)="updatePublisher($event)" >
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="name">Number Of Ads</label>                        
+                        <select class="form-control" (change)="updateNoOfAds($event)">
+                            <option *ngFor="let adCount of noOfAdslist" [value]="adCount.value">{{adCount.key}}</option>
+                        </select>                        
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="input-group">					
+                            <label for="name">Image Size</label>
+                            <input type="text" class="form-control" placeholder="eg. 120 / 180 / 320" [(ngModel)]="model.imageSize" #imageSize="ngModel" name="model" (keyup)="updateImageSize($event)">
+                        </div>
+                    </div>                
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="pubName">
-                <span> Pub Name</span>
-                <p-dropdown [options]="cities" [(ngModel)]="selectedPublisher" [style]="{'width':'200px'}"></p-dropdown>
+            <div class="row"> 
+                <!--<div class="col-md-4">
+                    <div class="input-group">                        
+                        <label for="name">Has Thumbnail</label>
+                        <select class="form-control" [(ngModel)]="model.hasThumbnails" #hasThumbnails="ngModel" name="model" (keyup)="updateHasThumbnails($event)">
+                            <option selected="selected" value="">Has Thumbnails</option>
+                            <option value="1">True</option>
+                            <option value="0">False</option>
+                        </select>
+                    </div>
+                </div>-->
+                <div class="col-md-4">
+                    <label for="name">Has Thumbnail</label>
+                    <select class="form-control" (change)="updateHasThumbnails($event)">
+                        <option *ngFor="let val of boolList" [value]="val.value">{{val.key}}</option>
+                    </select>                        
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="pubName">
-            <span> Pub Name</span>
-                <p-dropdown [options]="cities" [(ngModel)]="selectedPublisher" [style]="{'width':'200px'}"></p-dropdown>
-            </div>
-        </div>
-    </div>    
+        </form>
+    </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GridData } from './grid-data';
+import { GridDataInterface } from './grid-data';
 import { GridDataService } from './../services/grid-data.service';
 import { MenuItem } from 'primeng/primeng';
 
@@ -10,9 +10,9 @@ import { MenuItem } from 'primeng/primeng';
 })
 
 export class GridComponent implements OnInit {
-  template: GridData = new AdTagTemplates('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
-  selectedTemplate: GridData;
-  templates: GridData[];
+  template: GridDataInterface = new AdTagTemplates('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+  selectedTemplate: GridDataInterface;
+  templates: GridDataInterface[];
 
   private contextMenuItems: MenuItem[];
 
@@ -36,13 +36,13 @@ export class GridComponent implements OnInit {
       }
     ];
   }
-  editSelectedRow(templ: GridData) {
+  editSelectedRow(templ: GridDataInterface) {
     // open a modal to edit the selected template.
     console.log(templ);
 
   }
 
-  cloneSelectedRow(templ: GridData) {
+  cloneSelectedRow(templ: GridDataInterface) {
     // open property page and populate the current template's data.
     console.log(templ);
 
@@ -55,7 +55,7 @@ export class GridComponent implements OnInit {
 
 }
 
-class AdTagTemplates implements GridData {
+class AdTagTemplates implements GridDataInterface {
 
     constructor(public TEMPLATE_ID: any, public TEMPLATE_HTML_ID: any, public NAME: any, public TAG_ID: any, public NUMBER_OF_ADS: any,
     public WIDTH: any, public HEIGHT: any, public USES_THUMBNAILS: any, public IMAGE_SIZE: any, public HTML_TEXT: any,
