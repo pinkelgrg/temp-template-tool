@@ -1,5 +1,5 @@
 <div class="container">    
-    <form (ngSubmit)="onSubmit($event)" #propertyForm="ngForm">
+    <form #propertyForm="ngForm">
         <div class="form-group">
             <div class="row">
                 <div class="col-md-4">
@@ -88,6 +88,7 @@
                 </div>
             </div>
         </div>
-        <button class="btn btn-success property-submit" [disabled]="!propertyForm.form.valid">Submit</button>
+        <!--<button class="btn btn-success property-submit" [disabled]="!propertyForm.form.valid" ng-href="#/editor">Submit</button>-->
+        <button class="btn btn-success property-submit" ng-href="#/editor">Submit</button>
     </form>
 </div>

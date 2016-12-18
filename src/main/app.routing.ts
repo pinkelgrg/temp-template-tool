@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { GridComponent }  from './grid';
 import { PropertyComponent }    from './property';
-import { TemplateEditorComponent }    from './template-editor';
+import { TemplateContainerComponent }    from './template-editor-viewer-container';
 
 const appRoutes: Routes = [
   { path: '', component: GridComponent },
-  { path: 'editor', component: TemplateEditorComponent },
-  { path: 'property', component: PropertyComponent }
+  { path: 'editor', component: TemplateContainerComponent },
+  { path: 'property', component: PropertyComponent },
+  
+
 ];
 
 export const appRoutingProviders: any[] = [

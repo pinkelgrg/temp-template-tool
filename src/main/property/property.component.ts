@@ -118,7 +118,6 @@ export class PropertyComponent implements OnInit {
   }
   
   updatePublisher(event){
-    debugger;
     this.publisherName = event.target.value;
     console.log(this.publisherName);
   }

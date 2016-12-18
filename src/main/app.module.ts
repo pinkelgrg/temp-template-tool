@@ -11,6 +11,7 @@ import { PropertyComponent } from './property/property.component';
 import { TemplateEditorComponent } from './template-editor/template-editor.component';
 import { GridDataService } from './services/grid-data.service';
 import { TemplateViewerComponent } from './template-viewer/template-viewer.component';
+export { TemplateContainerComponent } from './template-editor-viewer-container';
 
 import {
   DataTableModule,
