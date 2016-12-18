@@ -17,3 +17,6 @@ div.ui-dropdown .ui-dropdown-trigger{
 .templProperty{
     width: 600px;
 }
+.property-submit{
+    float: right;
+}

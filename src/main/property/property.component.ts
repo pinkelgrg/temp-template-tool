@@ -21,6 +21,26 @@ export class PropertyComponent implements OnInit {
   templateEngine: Number;
   html: String;
   
+  templateEngineList :any= [
+    {
+      "key" : "Choose...",
+      "value" : ""
+    },{
+      "key" : "String Replacement",
+      "value" : "0"
+    },{
+      "key" : "Handlebars",
+      "value" : "10"
+    }
+    // These options are will be supported by adTag BE in the future.
+    // ,{
+    //   "key" : "Handlebars with Pre-Compiled",
+    //   "value" : "11"
+    // },{
+    //   "key" : "Handlebars with Client-Side Rendering",
+    //   "value" : "12"
+    // }
+  ]
   boolList: any=[
     {
       "key" : "Choose...",
@@ -37,7 +57,7 @@ export class PropertyComponent implements OnInit {
   noOfAdslist: any = [
     {
       "key" : "No of Ads",
-      "value" : 0
+      "value" :""
     },{
       "key" : 1,
       "value" : 1
@@ -69,6 +89,21 @@ export class PropertyComponent implements OnInit {
       "key" : 10,
       "value" : 10
     }
+  ];
+  platformList: any = [
+    {
+      "key" : "Platform",
+      "value" : ""
+    },{
+      "key" : "Desktop",
+      "value" : "Desktop"
+    },{
+      "key" : "Mobile",
+      "value" : "Mobile"
+    },{
+      "key" : "Desktop and Mobile",
+      "value" : "Desktop and Mobile"
+    }
   ]
   model = new TemplateData(this.publisherName,this.noOfAds,this.imageSize,this.hasThumbnails,this.platform,this.longAds,this.height,this.width,this.autoFit,this.templateVersion,this.autoDelay,this.templateEngine,this.html);
   constructor() {
@@ -83,22 +118,63 @@ export class PropertyComponent implements OnInit {
   }
   
   updatePublisher(event){
+    debugger;
     this.publisherName = event.target.value;
+    console.log(this.publisherName);
   }
 
   updateNoOfAds(event){        
     this.noOfAds = parseInt(event.target.value.trim(),10);
+    console.log(this.noOfAds);
   }
   
   updateImageSize(event){
     this.imageSize = event.target.value.trim();
+    console.log(this.imageSize);
   }
   
-  updateHasThumbnails(event){
-    debugger;
+  updateHasThumbnails(event){    
     this.hasThumbnails = parseInt(event.target.value.trim(),10);
+    console.log(this.hasThumbnails);
   }
 
+  updatePlatform(event){
+    this.platform = event.target.value.trim();
+    console.log(this.platform);
+  }
+  updateLongAds(event){    
+    this.longAds = parseInt(event.target.value.trim(),10);
+    console.log(this.longAds);
+  }
+  updateHeight(event){
+    this.height = event.target.value.trim();
+    console.log(this.height);
+  }
+  updateWidth(event){
+    this.width = event.target.value.trim();
+    console.log(this.width);
+  }
+  updateAutoFit(event){
+    this.autoFit = parseInt(event.target.value.trim(),10);
+    console.log(this.autoFit);
+  }
+  updateTemplateVersion(event){
+    this.templateVersion = event.target.value.trim();
+    console.log(this.templateVersion);
+  }
+  updateAutoDelay(event){
+    this.autoDelay = parseInt(event.target.value.trim(),10);
+    console.log(this.autoDelay);
+  }
+  updateTemplateEngine(event){
+    this.templateEngine = parseInt(event.target.value.trim(),10);
+    console.log(this.templateEngine);
+  }
+  onSubmit(asd){
+    
+    
+
+  }
 
 }
  

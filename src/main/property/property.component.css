@@ -1,0 +1,14 @@
+.alert-danger{
+    padding: 0px 20px;
+    position: absolute;
+    background: none;
+    border: none;
+}
+
+.row{
+    margin-bottom: 20px;
+}
+
+.row .input-group{
+    width: 100%;
+}

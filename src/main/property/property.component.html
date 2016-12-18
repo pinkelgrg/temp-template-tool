@@ -1,46 +1,93 @@
-<div class="container">
-    <div  [hidden]="submitted">    
-        <form (ngSubmit)="onSubmit()" #propertyForm="ngForm">
+<div class="container">    
+    <form (ngSubmit)="onSubmit($event)" #propertyForm="ngForm">
+        <div class="form-group">
             <div class="row">
-                <div class="form-group">
-                    <div class="col-md-4">
-                        <label for="name">Publisher Name</label>
-                        <input type="text" class="form-control" placeholder="Publisher Name"  [(ngModel)]="model.publisherName" #publisherName="ngModel" name="model" (keyup)="updatePublisher($event)" >
-                    </div>
+                <div class="col-md-4">
+                    <label for="name">Publisher Name</label>
+                    <input type="text" class="form-control" placeholder="Publisher Name"  [(ngModel)]="model.publisherName" name="model" (keyup)="updatePublisher($event)" name="model.publisherName" required>
+                </div>
 
-                    <div class="col-md-4">
-                        <label for="name">Number Of Ads</label>                        
-                        <select class="form-control" (change)="updateNoOfAds($event)">
-                            <option *ngFor="let adCount of noOfAdslist" [value]="adCount.value">{{adCount.key}}</option>
-                        </select>                        
-                    </div>
+                <div class="col-md-4">
+                    <label for="name">Number Of Ads</label>
+                    <select class="form-control" (change)="updateNoOfAds($event)" [(ngModel)]="model.noOfAds" name="model.noOfAds" required>
+                        <option *ngFor="let adCount of noOfAdslist" [value]="adCount.value" >{{adCount.key}}</option>
+                    </select>                        
+                </div>
 
-                    <div class="col-md-4">
-                        <div class="input-group">					
-                            <label for="name">Image Size</label>
-                            <input type="text" class="form-control" placeholder="eg. 120 / 180 / 320" [(ngModel)]="model.imageSize" #imageSize="ngModel" name="model" (keyup)="updateImageSize($event)">
-                        </div>
-                    </div>                
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <label for="name">Image Size</label>
+                        <input type="text" class="form-control" placeholder="eg. 120 / 180 / 320" [(ngModel)]="model.imageSize" name="model.imageSize" (keyup)="updateImageSize($event)" required>
+                    </div>
                 </div>
             </div>
-            <div class="row"> 
-                <!--<div class="col-md-4">
-                    <div class="input-group">                        
-                        <label for="name">Has Thumbnail</label>
-                        <select class="form-control" [(ngModel)]="model.hasThumbnails" #hasThumbnails="ngModel" name="model" (keyup)="updateHasThumbnails($event)">
-                            <option selected="selected" value="">Has Thumbnails</option>
-                            <option value="1">True</option>
-                            <option value="0">False</option>
-                        </select>
-                    </div>
-                </div>-->
+            <div class="row">
                 <div class="col-md-4">
                     <label for="name">Has Thumbnail</label>
-                    <select class="form-control" (change)="updateHasThumbnails($event)">
+                    <select class="form-control" (change)="updateHasThumbnails($event)" name="model.hasThumbnails" [(ngModel)]="model.hasThumbnails" required>
+                        <option *ngFor="let val of boolList" [value]="val.value">{{val.key}}</option>
+                    </select>                        
+                </div>
+
+                <div class="col-md-4">
+                    <label for="name">Device Platform</label>
+                    <select class="form-control" (change)="updatePlatform($event)" name="model.platform" [(ngModel)]="model.platform" required>
+                        <option *ngFor="let val of platformList" [value]="val.value">{{val.key}}</option>
+                    </select>                        
+                </div>
+
+                <div class="col-md-4">
+                    <label for="name">Has Long Ads</label>
+                    <select class="form-control" (change)="updateLongAds($event)" name="model.longAds" [(ngModel)]="model.longAds" required>
+                        <option *ngFor="let val of boolList" [value]="val.value">{{val.key}}</option>
+                    </select>                        
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <label for="name">Height</label>
+                        <input type="text" class="form-control" placeholder="eg. 300px or 100%" [(ngModel)]="model.height" name="model.height" (keyup)="updateHeight($event)" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <label for="name">Width</label>
+                        <input type="text" class="form-control" placeholder="eg. 300px or 100%" [(ngModel)]="model.width" name="model.width" (keyup)="updateWidth($event)" required>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="name">Is Auto Fit</label>
+                    <select class="form-control" (change)="updateAutoFit($event)" [(ngModel)]="model.autoFit" required name="model.autoFit">
                         <option *ngFor="let val of boolList" [value]="val.value">{{val.key}}</option>
                     </select>                        
                 </div>
             </div>
-        </form>
-    </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <label for="name">Template Version</label>
+                        <input type="text" class="form-control" placeholder="eg. v1 or v2 ..." [(ngModel)]="model.templateVersion" name="model.templateVersion" (keyup)="updateTemplateVersion($event)" required>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <label for="name">Auto Delay</label>
+                        <input type="text" class="form-control" placeholder="Time in milliseconds" [(ngModel)]="model.autoDelay" name="model.autoDelay" (keyup)="updateAutoDelay($event)" required>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="name">Template Engine</label>
+                    <select class="form-control" (change)="updateTemplateEngine($event)" [(ngModel)]="model.templateEngine" required name="model.templateEngine">
+                        <option *ngFor="let val of templateEngineList" [value]="val.value">{{val.key}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-success property-submit" [disabled]="!propertyForm.form.valid">Submit</button>
+    </form>
 </div>
