@@ -1,3 +1,16 @@
-<p>
-  template-editor works!
-</p>
+<div class="line">
+</div>
+<!--<ace-editor [options]="aceOption"  class="aceEditor" ></ace-editor>-->
+
+<!--<div ace-editor [text]="text" #editor class="aceEditor" (textChanged)="onChange($event)"></div>-->
+<!--<ace-editor [text]="initialSql" style="min-height: 500px; width:100%; overflow: auto;" (textChanged)="textChanged($event)"></ace-editor>-->
+<!--<div ace-editor [text]="text" [mode]="'sql'" [theme]="'eclipse'" [options]="options" [readOnly]="false" (textChanged)="onChange($event)" style="min-height: 200px; width:100%; overflow: auto;">
+</div>
+<div ace-editor
+       [text]="text"
+       [mode]="'sql'"
+       [theme]="'clouds'"
+       [options]="options"
+       [readOnly]="false"
+       (textChanged)="onChange($event)"
+       style="display:block; height: 80vh; width:100%"></div>-->

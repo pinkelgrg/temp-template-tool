@@ -1,12 +1,14 @@
 import { Component, OnInit, Input } from "@angular/core";
 import {SelectItem} from "primeng/primeng";
 import {TemplateData} from "./../shared/template-data";
+import { ActivatedRoute, Router } from '@angular/router';
+
 @Component({
   selector: "app-property",
   templateUrl: "./property.component.html",
   styleUrls: ["./property.component.css"]
 })
-export class PropertyComponent implements OnInit {  
+export class PropertyComponent {
   publisherName: String;
   noOfAds: Number;
   imageSize: String;
@@ -106,7 +108,7 @@ export class PropertyComponent implements OnInit {
     }
   ]
   model = new TemplateData(this.publisherName,this.noOfAds,this.imageSize,this.hasThumbnails,this.platform,this.longAds,this.height,this.width,this.autoFit,this.templateVersion,this.autoDelay,this.templateEngine,this.html);
-  constructor() {
+  constructor(private router: Router) {
     
   }
 
@@ -169,10 +171,9 @@ export class PropertyComponent implements OnInit {
     this.templateEngine = parseInt(event.target.value.trim(),10);
     console.log(this.templateEngine);
   }
-  onSubmit(asd){
-    
-    
-
+  propertyFormSubmit(){
+    let link = ['/editor'];
+    this.router.navigate(link);
   }
 
 }

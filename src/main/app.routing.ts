@@ -8,9 +8,7 @@ import { TemplateContainerComponent }    from './template-editor-viewer-containe
 const appRoutes: Routes = [
   { path: '', component: GridComponent },
   { path: 'editor', component: TemplateContainerComponent },
-  { path: 'property', component: PropertyComponent },
-  
-
+  { path: 'property', component: PropertyComponent }
 ];
 
 export const appRoutingProviders: any[] = [

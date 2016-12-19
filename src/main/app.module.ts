@@ -11,8 +11,8 @@ import { PropertyComponent } from './property/property.component';
 import { TemplateEditorComponent } from './template-editor/template-editor.component';
 import { GridDataService } from './services/grid-data.service';
 import { TemplateViewerComponent } from './template-viewer/template-viewer.component';
-export { TemplateContainerComponent } from './template-editor-viewer-container';
-
+import { TemplateContainerComponent } from './template-editor-viewer-container';
+import { AceEditorDirective, AceEditorComponent } from 'ng2-ace-editor';
 import {
   DataTableModule,
   InputTextModule,
@@ -30,7 +30,10 @@ import {
     GridComponent,
     PropertyComponent,
     TemplateEditorComponent,
-    TemplateViewerComponent
+    TemplateViewerComponent,
+    TemplateContainerComponent,
+    AceEditorDirective,
+    AceEditorComponent
   ],
   imports: [
     BrowserModule,
